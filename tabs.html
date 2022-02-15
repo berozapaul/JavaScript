@@ -1,0 +1,75 @@
+<ul class="tabs">
+    <li data-attr="1" class="active">
+        <label>Item 1</label>
+    </li>
+    <li data-attr="2">
+        <label>Item 2</label>
+    </li>
+    <li data-attr="3">
+        <label>Item 3</label>
+
+    </li>
+    <li data-attr="4">
+        <label>Item 4</label>
+    </li>
+</ul>
+<div data-attr="item1" class="description active">Item 1 description</div>
+<div data-attr="item2" class="description">Item 2 description</div>
+<div data-attr="item3" class="description">Item 3 description</div>
+<div data-attr="item4" class="description">Item 4 description</div>
+
+<script>
+
+    const showTab = (list, clickedIndex) => {
+        for(let i = 0; i < list.length ; i++) {
+            const item = list[i];
+            item.classList.remove('active');
+
+            if(i === clickedIndex) {
+                const attr = 'item' + item.dataset.attr;
+                const desList = document.querySelectorAll('.description');
+                for(let i =0 ; i< desList.length ; i++){
+                    const des = desList[i];
+                    des.classList.remove('active');
+                    if (des.dataset.attr === attr){
+                        des.classList.add('active');
+                    }
+                }
+                item.classList.add('active');
+            }
+        }
+
+    }
+
+    const liNodes = document.querySelectorAll('.tabs li');
+    for(let i = 0; i < liNodes.length ; i++) {
+        const item = liNodes[i];
+        item.addEventListener('click', (e) => showTab(liNodes, i))
+    }
+</script>
+
+<style>
+    ul.tabs{
+        display: flex;
+    }
+    ul.tabs li{
+        background-color: lightgray;
+        margin: 2px;
+        padding: 10px;
+        cursor: pointer;
+        list-style: none;
+    }
+
+    ul.tabs li.active{
+        background-color: dodgerblue;
+        color:white;
+    }
+
+    div.description{
+        display: none;
+        margin-left: 40px;
+    }
+    div.description.active{
+        display: block;
+    }
+</style>
