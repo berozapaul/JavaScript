@@ -1,2 +1,85 @@
-<a href="https://github.com/berozapaul/JavaScript/blob/master/tabs.html">Tabs</a>
-<a href="https://github.com/berozapaul/JavaScript/blob/master/rating.html">Star rating</a>
+<htm>
+    <head>
+        <title>Demo</title>
+    </head>
+    <body></body>
+</htm>
+<script>
+    const todos = [
+        {
+            "userId": 1,
+            "id": 1,
+            "title": "delectus aut autem",
+            "completed": false
+        },
+        {
+            "userId": 1,
+            "id": 2,
+            "title": "quis ut nam facilis et officia qui",
+            "completed": false
+        },
+        {
+            "userId": 1,
+            "id": 3,
+            "title": "fugiat veniam minus",
+            "completed": false
+        }
+    ];
+
+    const addNewTodo = () => {
+
+    };
+
+    const domFragment = new DocumentFragment();
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('container');
+
+    const inputContainer = document.createElement('div');
+    inputContainer.classList.add('input-container');
+
+    const inputElement = document.createElement('input');
+    inputElement.classList.add('field');
+
+    const buttonElement = document.createElement('button');
+    buttonElement.classList.add('field');
+    buttonElement.textContent="Add new todo";
+    buttonElement.onclick= addNewTodo;
+
+    inputContainer.append(inputElement)
+    inputContainer.append(buttonElement)
+
+    const h2Element = document.createElement('h2');
+    h2Element.textContent = 'Todo list';
+
+    const ulElement = document.createElement('ul');
+    ulElement.classList.add('list-container');
+
+    todos.forEach((item, index )=> {
+        const liElement = document.createElement('li');
+        liElement.classList.add('item');
+        liElement.innerText = item.title;
+        domFragment.append(liElement);
+    });
+
+    ulElement.append(domFragment)
+    wrapper.append(inputContainer);
+    wrapper.append(h2Element);
+    wrapper.append(ulElement);
+    document.body.append(wrapper);
+</script>
+
+<style>
+    div.container{max-width: 980px;margin: 0 auto;}
+    ul.list-container{padding: 0;}
+    ul li.item{
+        padding:10px;
+        border:1px solid #ccc;
+        list-style: none;
+        margin: 5px 0;
+        border-radius: 7px;
+    }
+
+    .field{height: 40px;border-radius: 7px;}
+    input.field{width: 80%;}
+    button.field{cursor: pointer;}
+</style>
