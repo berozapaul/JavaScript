@@ -1,0 +1,53 @@
+<div class="rating">
+    <i class="star"></i>
+    <i class="star"></i>
+    <i class="star"></i>
+    <i class="star"></i>
+    <i class="star"></i>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        (() => {
+            const toggleColor = (list, index) => {
+                for (let i = list.length -1; i >= 0 ; i--) {
+                    const item = itemList[i];
+                    item.classList.remove('active');
+
+                    if(i >= index) {
+                        item.classList.contains('active') ? item.classList.remove('active') :
+                            item.classList.add('active');
+                    }
+                }
+            }
+
+            const itemList = document.querySelectorAll('.star');
+            for (let i = itemList.length -1; i >= 0; i--) {
+                const item = itemList[i];
+                item.addEventListener('click', (e) => toggleColor(itemList, i))
+            }
+        })();
+    });
+</script>
+
+
+<style>
+    .rating {
+        display: inline-flex;
+        flex-direction: row-reverse;
+    }
+    i {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: 5px;
+        background: darkgray;
+        transition: all 0.1s ease-in;
+    }
+    .star.active{
+        background: gold;
+    }
+    i:hover ~ i, i:hover {
+        background: gold;
+    }
+</style>
