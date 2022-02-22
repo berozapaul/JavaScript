@@ -1,0 +1,23 @@
+ul.tabs{
+    display: flex;
+}
+ul.tabs li{
+    background-color: lightgray;
+    margin: 2px;
+    padding: 10px;
+    cursor: pointer;
+    list-style: none;
+}
+
+ul.tabs li.active-tab{
+    background-color: dodgerblue;
+    color:white;
+}
+
+div.description{
+    display: none;
+    margin-left: 40px;
+}
+div.description.active-desc{
+    display: block;
+}
