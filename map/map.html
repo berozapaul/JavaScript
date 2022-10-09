@@ -1,0 +1,26 @@
+<htm>
+    <head>
+        <title>JavaScript Map</title>
+    </head>
+    <body></body>
+</htm>
+<script>
+    // Initialize a Map with 2D array
+    const arr = [
+        ['name', 'Joe Smith'],
+        ['status', 'active'],
+    ]
+    const mapByArr = new Map(arr);
+    console.log(mapByArr); // Map(2) {'name' => 'Joe Smith', 'status' => 'active'}
+
+    // Initialize a Map from an literal object
+    const obj = {name: 'Joe Smith', status: 'active'};
+    const mapByObj = new Map(Object.entries(obj));
+    console.log(mapByObj) // Map(2) {'name' => 'Joe Smith', 'status' => 'active'}
+
+    // Initialize a Map manually
+    const manualMap = new Map();
+    manualMap.set('name', 'Joe Smith');
+    manualMap.set('status', 'active');
+    console.log(manualMap) // Map(2) {'name' => 'Joe Smith', 'status' => 'active'}
+</script>
