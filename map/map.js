@@ -71,3 +71,35 @@
         console.log(`${key} = ${value}`);
     });
 })();
+
+
+(function(){    
+    // How to sort a Map object?
+    const map = new Map();
+    map.set("a",3);
+    map.set("c",4);
+    map.set("b",1);
+    map.set("d",2);
+
+    // sort map by value in decending order
+    const mapSortDesc1 = new Map([...map.entries()].sort((a, b) => b[1] - a[1]));
+    console.log(mapSortDesc1);
+
+    const mapSortDesc2 = new Map([...map].sort((a, b) => b[1] - a[1]));
+    console.log(mapSortDesc2);
+
+    // sort map by value in ascending order
+    const mapSortAsc1 = new Map([...map.entries()].sort((a, b) => a[1] - b[1]));
+    console.log(mapSortAsc1);
+
+    const mapSortAsc2 = new Map([...map].sort((a, b) => a[1] - b[1]));
+    console.log(mapSortAsc2);   
+    
+    // sort map by key ascending order
+    const mapSortAsc3 = new Map([...map.entries()].sort());
+    console.log(mapSortAsc3);
+
+    // sort map by key descnding order
+    const mapSortDec3 = new Map([...map.entries()].reverse());
+    console.log(mapSortDec3);
+})();
