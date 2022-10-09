@@ -5,13 +5,33 @@
     <body></body>
 </htm>
 <script>
-    // Initialize a Set with array
-    const nameList = ['Joe', 'Carol', 'Jenny', 'Cathy'];
-    const nameSet = new Set(nameList);
-    console.log(nameSet);  // Set(4) {'Joe', 'Carol', 'Jenny', 'Cathy'}
+     (function(){      
+        // Initialize a Set with array
+        const nameList = ['Joe', 'Carol', 'Jenny', 'Cathy'];
+        const nameSet = new Set(nameList);
+        console.log(nameSet);  // Set(4) {'Joe', 'Carol', 'Jenny', 'Cathy'}
 
-    // Initialize a Set with array
-    const strSet = new Set('Cool');
-    console.log(strSet); // Set(3) {'C', 'o', 'l'}
-    
+        // Initialize a Set with string
+        const strSet = new Set('Cool');
+        console.log(strSet); // Set(3) {'C', 'o', 'l'}
+    })();
+</script>
+
+
+<script>
+    (function(){    
+        const nameList = ['Joe', 'Carol', 'Jenny', 'Cathy'];
+        const nameSet = new Set(nameList);
+        console.log(nameSet);  // Set(4) {'Joe', 'Carol', 'Jenny', 'Cathy'}
+
+        const arrFromSet = Array.from(nameSet);
+        console.log(arrFromSet); // (4) ['Joe', 'Carol', 'Jenny', 'Cathy']
+
+        const spreadArr = [...nameSet];
+        console.log(spreadArr); // (4) ['Joe', 'Carol', 'Jenny', 'Cathy']
+
+        const arr = [];
+        nameSet.forEach(v => arr.push(v));
+        console.log(arr);  //(4) ['Joe', 'Carol', 'Jenny', 'Cathy']
+    })();
 </script>

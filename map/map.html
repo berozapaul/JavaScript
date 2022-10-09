@@ -5,22 +5,47 @@
     <body></body>
 </htm>
 <script>
-    // Initialize a Map with 2D array
-    const arr = [
-        ['name', 'Joe Smith'],
-        ['status', 'active'],
-    ]
-    const mapByArr = new Map(arr);
-    console.log(mapByArr); // Map(2) {'name' => 'Joe Smith', 'status' => 'active'}
+    (function(){
+        // Initialize a Map with 2D array
+        const arr = [
+            ['name', 'Joe Smith'],
+            ['status', 'active'],
+        ]
+        const mapByArr = new Map(arr);
+        console.log(mapByArr); // Map(2) {'name' => 'Joe Smith', 'status' => 'active'}
 
-    // Initialize a Map from an literal object
-    const obj = {name: 'Joe Smith', status: 'active'};
-    const mapByObj = new Map(Object.entries(obj));
-    console.log(mapByObj) // Map(2) {'name' => 'Joe Smith', 'status' => 'active'}
+        // Initialize a Map from an literal object
+        const obj = {name: 'Joe Smith', status: 'active'};
+        const mapByObj = new Map(Object.entries(obj));
+        console.log(mapByObj) // Map(2) {'name' => 'Joe Smith', 'status' => 'active'}
 
-    // Initialize a Map manually
-    const manualMap = new Map();
-    manualMap.set('name', 'Joe Smith');
-    manualMap.set('status', 'active');
-    console.log(manualMap) // Map(2) {'name' => 'Joe Smith', 'status' => 'active'}
+        // Initialize a Map manually
+        const manualMap = new Map();
+        manualMap.set('name', 'Joe Smith');
+        manualMap.set('status', 'active');
+        console.log(manualMap) // Map(2) {'name' => 'Joe Smith', 'status' => 'active'}
+    })();
+
+</script>
+
+
+<script>
+    (function(){    
+        // Convert a Map to Array
+        const arr = [
+            ['name', 'Joe Smith'],
+            ['status', 'active'],
+        ]
+        const mapByArr = new Map(arr);
+        console.log(mapByArr); // Map(2) {'name' => 'Joe Smith', 'status' => 'active'}
+
+        const arrFromMap = Array.from(mapByArr);
+        console.log(arrFromMap); // [['name', 'Joe Smith'],['status', 'active']]
+
+        const values = Array.from(mapByArr.values());
+        console.log(values); // ['Joe Smith', 'active']
+
+        const keys = Array.from(mapByArr.keys());
+        console.log(keys); // ['name', 'status']
+    })();
 </script>
