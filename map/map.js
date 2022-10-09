@@ -99,7 +99,7 @@
     const mapSortAsc3 = new Map([...map.entries()].sort());
     console.log(mapSortAsc3);
 
-    // sort map by key descnding order
+    // sort map by key descending order
     const mapSortDec3 = new Map([...map.entries()].sort().reverse());
     console.log(mapSortDec3);
 })();
