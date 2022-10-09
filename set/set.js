@@ -50,3 +50,25 @@
         console.log(`${key} = ${value}`);
     });
 })();
+
+
+(function(){      
+    // Initialize a Set with array
+    const idList = ['d', 'a', 'b', 'c'];
+    const idSet = new Set(idList);
+    console.log(idSet); 
+
+    // Sort Set using Array.from ascending
+    const sortedSetAsc1 = Array.from(idSet).sort();
+    console.log(sortedSetAsc1); 
+
+    const sortedSetDec1 = Array.from(idSet).sort().reverse();
+    console.log(sortedSetDec1); 
+
+    // Sort Set using spread ascending
+    const sortedSetAsc2 = [...idSet].sort();
+    console.log(sortedSetAsc2);  
+    
+    const sortedSetDec2 = [...idSet].sort().reverse();
+    console.log(sortedSetDec2);   
+})();

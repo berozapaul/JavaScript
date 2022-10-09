@@ -100,6 +100,6 @@
     console.log(mapSortAsc3);
 
     // sort map by key descnding order
-    const mapSortDec3 = new Map([...map.entries()].reverse());
+    const mapSortDec3 = new Map([...map.entries()].sort().reverse());
     console.log(mapSortDec3);
 })();
