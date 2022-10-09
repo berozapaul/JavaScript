@@ -49,3 +49,35 @@
         console.log(keys); // ['name', 'status']
     })();
 </script>
+
+<script>
+    (function(){    
+        // How to use loop on Map
+        const arr = [
+            ['name', 'Joe Smith'],
+            ['status', 'active'],
+        ]
+        const map = new Map(arr);
+        console.log(map); // Map(2) {'name' => 'Joe Smith', 'status' => 'active'}
+        
+        for(const value of map.values()) {
+            console.log(value);
+        }
+
+        for(const key of map.keys()) {
+            console.log(key);
+        }
+
+        for(const [key, value] of map) {
+            console.log(key, value);
+        }
+
+        for(const [key, value] of map.entries()) {
+            console.log(key, value);
+        }
+
+        map.forEach((value, key) => {
+            console.log(`${key} = ${value}`);
+        });
+    })();
+</script>

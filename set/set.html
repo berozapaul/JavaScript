@@ -35,3 +35,28 @@
         console.log(arr);  //(4) ['Joe', 'Carol', 'Jenny', 'Cathy']
     })();
 </script>
+
+
+<script>
+    (function(){    
+        // How to use loop on Set
+        const nameList = ['Joe', 'Carol', 'Jenny', 'Cathy'];
+        const nameSet = new Set(nameList);
+        
+        for(const value of nameSet.values()) {
+            console.log(value);
+        }
+
+        for(const key of nameSet.keys()) {
+            console.log(key);
+        }
+
+        for(const [key, value] of nameSet.entries()) {
+            console.log(key, value);
+        }
+
+        nameSet.forEach((value, key) => {
+            console.log(`${key} = ${value}`);
+        });
+    })();
+</script>
